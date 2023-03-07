@@ -4,6 +4,28 @@
   box-sizing: border-box;
 }
 
+.dagger {
+  position: relative;
+  -webkit-animation: floatBubble 2s infinite  normal ease-out;
+  animation: floatBubble 2s infinite  normal ease-out;
+}
+@-webkit-keyframes floatBubble {
+  0% {
+      left:500px;
+  }
+  100% {
+      left: 0px;
+  }
+}
+@keyframes floatBubble {
+  0% {
+      left:500px;
+  }
+  100% {
+      left: 0px;
+  }
+}
+
 body {
   background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.05), rgba(105, 6, 8, 0.70)), url("./images/img104.png");
   background-color: black;
