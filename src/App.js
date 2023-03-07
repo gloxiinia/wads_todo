@@ -1,23 +1,82 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 
+// import myImage from './images/joker-phone.png';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+
 function App() {
+
+  const [inputText, setInputText] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [status, setStatus] = useState("all");
+  const [filteredTodos, setFilteredTodos] = useState([]);
+
+  useEffect(() =>{
+    const getLocalTodos = () => {
+      if(localStorage.getItem("todos") === null){
+        localStorage.setItem("todos", JSON.stringify([]));
+      }else{
+        let todolocal = JSON.parse(localStorage.getItem("todos"));
+        console.log(todolocal);
+      }
+    };
+
+    getLocalTodos();
+  }, []);
+
+  useEffect(() => {
+    const filterHandler = () => {
+      switch(status){
+        case 'done':
+          setFilteredTodos(todos.filter(todo => todo.done === true))
+          break;
+  
+        case 'uncompleted':
+          setFilteredTodos(todos.filter(todo => todo.done === false))
+          break;
+  
+        default:
+          setFilteredTodos(todos);
+          break;
+      }
+    };
+
+    const saveLocalTodos = () => {
+      localStorage.setItem("todos", JSON.stringify(todos));
+      console.log((JSON.parse(localStorage.getItem("todos"))).length);
+    };
+
+    filterHandler();
+    saveLocalTodos();
+
+  }, [todos,status]);
+
+
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="todo-app">
+      <header>
+        <h1>To-Do App</h1>
       </header>
+      <TodoForm 
+        todos = {todos} 
+        setTodos = {setTodos} 
+        inputText = {inputText}
+        setInputText = {setInputText}
+        setStatus = {setStatus}
+      ></TodoForm>
+      <TodoList 
+        setTodos = {setTodos}
+        todos={todos}
+        filteredTodos = {filteredTodos}
+      ></TodoList>
+      {/* <img src={myImage}></img> */}
     </div>
   );
 }
