@@ -4,6 +4,27 @@
   box-sizing: border-box;
 }
 
+ /* Placeholder font */
+ .todo-input::-webkit-input-placeholder {
+  font-family: sans-serif;
+}
+
+.todo-input:-ms-input-placeholder {
+  font-family: "Arsenal",sans-serif;
+}
+
+.todo-input:-moz-placeholder {
+  font-family: "Arsenal",sans-serif;
+}
+
+.todo-input::-moz-placeholder {
+  font-family: "Arsenal",sans-serif;
+}
+
+input[type="text"]
+{
+  font-family: "Arsenal", sans-serif;
+}
 .dagger {
   position: relative;
   -webkit-animation: floatBubble 2s infinite  normal ease-out;
@@ -35,42 +56,45 @@ body {
   background-attachment: fixed;
   color: white;
   font-family: "Arsenal", sans-serif;
-  min-height: 100vh;
+  min-height: 30em;
 
 }
 
 h1 {
-  padding: 0.5rem;
+  padding: 0.25em;
   background-color: black;
   color: white;
   border-style: solid;
-  border-width:0.25rem;
+  border-width:0.10em;
 }
 header {
-  font-size: 2rem;
+  font-size: 1.5em;
   font-family: "Franklin Gothic", sans-serif ;
   color: white;
+  transition: all 1s ease;
 }
 
 header,
 form {
-  min-height: 20vh;
+  min-height: 6em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 form input,
 form button {
-  padding: 0.5rem;
-  font-size: 2rem;
+  padding: 0.3em;
+  font-size: 1.5em;
   border: none;
   background: white;
+  transition: all 1s ease;
 }
 form button {
+  padding: 0.33em;
   color: black;
   background: #f7fffe;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
 }
 form button:hover {
   background: black;
@@ -84,22 +108,22 @@ form button:hover {
 }
 
 .todo-list {
-  min-width: 30%;
+  min-width: 50%;
   list-style: none;
 }
 
 .todo {
-  margin: 0.5rem;
+  margin: 0.5em;
   background: white;
-  font-size: 1.5rem;
+  font-size: 1em;
   color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 1s ease;
+  transition: all 2s ease;
 }
 .filter-todo {
-  padding: 1rem;
+  padding: 1em;
 }
 .todo li {
   flex: 1;
@@ -110,15 +134,15 @@ form button:hover {
   background: black;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 1em;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1em;
 }
 .done-btn {
   background: red;
 }
 .todo-item {
-  padding: 0rem 0.5rem;
+  padding: 0em 0.5em;
 }
 
 .fa-delete,
@@ -127,7 +151,7 @@ form button:hover {
 }
 
 .fall {
-  transform: translateY(10rem) rotateZ(20deg);
+  transform: translateY(10em) rotateZ(20deg);
   opacity: 0;
 }
 
@@ -150,7 +174,7 @@ select {
 
 /* Custom Select */
 .select {
-  margin: 1rem;
+  margin: 1em;
   position: relative;
   overflow: hidden;
 }
@@ -158,7 +182,7 @@ select {
   color: black;
   font-family: "Arsenal", sans-serif;
   cursor: pointer;
-  width: 12rem;
+  width: 12em;
 }
 /* Arrow */
 .select::after {
@@ -166,8 +190,85 @@ select {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1rem;
+  padding: 1em;
   background: black;
   cursor: pointer;
   pointer-events: none;
 }
+
+/* Joker image */
+img {
+  position: fixed;
+  max-width: 40vw;
+  height:auto;
+  left: 0px;
+  top: 50vh;
+  z-index: -1;
+}
+
+@media (max-width: 50em) {
+  header{
+    font-size: 1.2em;
+  }
+  body{
+    font-size: 1em
+  }
+
+  form input,
+form button {
+  display: flex;
+  padding: 0.5em;
+  font-size: 1em;
+  border: none;
+  background: white;
+  transition: all 1s ease;
+}
+
+form button{
+  padding:0.63em;
+}
+.todo {
+  margin: 0.5em;
+  background: white;
+  font-size: 0.8em;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 2s ease;
+}
+}
+
+@media (max-width: 30em) {
+  header{
+    font-size: 2em;
+  }
+  body{
+    font-size: 0.5em;
+    
+  }
+
+  form input,
+  form button {
+  padding: 0.5em;
+  font-size: 2em;
+  border: none;
+  background: white;
+  transition: all 1s ease;
+}
+
+form button{
+  padding:0.625em;
+}
+.todo {
+  margin: 0.5em;
+  background: white;
+  font-size: 1.5em;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+}
+
