@@ -40,13 +40,14 @@ body {
 
 }
 
-h1 {
+h1, h2 {
   padding: 0.25em;
   background-color: black;
   color: white;
   border-style: solid;
   border-width:0.10em;
 }
+
 
 .sound-player{
   display: flex;
@@ -85,12 +86,21 @@ h1 {
   padding-left: 0.5em;
 }
 
+footer{
+  position: fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  text-align:center;
+}
+
 header {
   font-size: 1.5em;
   font-family: "Franklin Gothic", sans-serif ;
   color: white;
   transition: all 1s ease;
 }
+
 
 header,
 form {

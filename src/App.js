@@ -7,6 +7,7 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import PlaySound from './components/PlaySound';
 import Price from "./audio/price.mp3";
+import Name from './components/Name';
 
 function App() {
 
@@ -89,6 +90,10 @@ function App() {
       ></TodoList>
       <div className="joker-img">
       </div>
+      <footer>
+        <Name/>
+      </footer>
+
     </div>
   );
 }
