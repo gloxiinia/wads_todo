@@ -5,7 +5,8 @@ import './App.css';
 import joker from './images/joker-phone.png';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-
+import PlaySound from './components/PlaySound';
+import Price from "./audio/price.mp3";
 
 function App() {
 
@@ -14,6 +15,9 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [currentSong, setSong] = useState(Price); 
+  const [isLooped, setLoop] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   //UseEffect, after each browser refresh run once
   //Getting and checking for the localstorage in the web
@@ -63,6 +67,14 @@ function App() {
       <header>
         <h1>To-Do App</h1>
       </header>
+      <PlaySound
+        isPlaying = {isPlaying}
+        setIsPlaying = {setIsPlaying}
+        isLooped = {isLooped}
+        setLoop = {setLoop}
+        currentSong = {currentSong}
+        setSong = {setSong}
+      />
       <TodoForm 
         todos = {todos} 
         setTodos = {setTodos} 
@@ -75,8 +87,7 @@ function App() {
         todos={todos}
         filteredTodos = {filteredTodos}
       ></TodoList>
-      <div>
-        <img src= {joker} alt = "Joker"/>
+      <div className="joker-img">
       </div>
     </div>
   );
