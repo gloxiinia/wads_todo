@@ -381,25 +381,3 @@ form button{
 
   
 }
-
-.dagger {
-  position: relative;
-  -webkit-animation: floatBubble 2s infinite  normal ease-out;
-  animation: floatBubble 2s infinite  normal ease-out;
-}
-@-webkit-keyframes floatBubble {
-  0% {
-      left:500px;
-  }
-  100% {
-      left: 0px;
-  }
-}
-@keyframes floatBubble {
-  0% {
-      left:500px;
-  }
-  100% {
-      left: 0px;
-  }
-}
