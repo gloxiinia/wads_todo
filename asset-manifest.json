@@ -1,10 +1,14 @@
 {
   "files": {
     "main.css": "/wads_todo/static/css/main.d20c565a.css",
-    "main.js": "/wads_todo/static/js/main.19f0b4ca.js",
+    "main.js": "/wads_todo/static/js/main.9695756a.js",
+    "static/media/mazeoflife.mp3": "/wads_todo/static/media/mazeoflife.e8c0255a7ced1fd96ed3.mp3",
     "static/media/wakeupgetup.mp3": "/wads_todo/static/media/wakeupgetup.9f4b7ebc9d4015891792.mp3",
+    "static/media/roadlesstaken.mp3": "/wads_todo/static/media/roadlesstaken.e2aca975d93664c69b23.mp3",
     "static/media/beneaththemask.mp3": "/wads_todo/static/media/beneaththemask.abeb7143e75f861a4213.mp3",
+    "static/media/cinematictale.mp3": "/wads_todo/static/media/cinematictale.a32bd64f2285b33a1bcf.mp3",
     "static/media/nomorewhatifs.mp3": "/wads_todo/static/media/nomorewhatifs.fd74edc8788f10c7cb8b.mp3",
+    "static/media/pullthetrigger.mp3": "/wads_todo/static/media/pullthetrigger.c504f6860949528c405e.mp3",
     "static/media/whimsoffate.mp3": "/wads_todo/static/media/whimsoffate.b59fcd7f71238f603cf2.mp3",
     "static/media/takeover.mp3": "/wads_todo/static/media/takeover.84b425d89ec3be2983f0.mp3",
     "static/media/lifegoeson.mp3": "/wads_todo/static/media/lifegoeson.2d8c495277fc4a04efcb.mp3",
@@ -15,10 +19,10 @@
     "static/media/joker-phone.png": "/wads_todo/static/media/joker-phone.2ce50e315cc8d345923b.png",
     "index.html": "/wads_todo/index.html",
     "main.d20c565a.css.map": "/wads_todo/static/css/main.d20c565a.css.map",
-    "main.19f0b4ca.js.map": "/wads_todo/static/js/main.19f0b4ca.js.map"
+    "main.9695756a.js.map": "/wads_todo/static/js/main.9695756a.js.map"
   },
   "entrypoints": [
     "static/css/main.d20c565a.css",
-    "static/js/main.19f0b4ca.js"
+    "static/js/main.9695756a.js"
   ]
 }
