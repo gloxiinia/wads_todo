@@ -1,5 +1,3 @@
-
-
 //importing songs
 import Sound from "react-sound";
 import Price from "../audio/price.mp3";
@@ -10,6 +8,10 @@ import WakeUpGetUp from "../audio/wakeupgetup.mp3";
 import NoMoreWhatIfs from "../audio/nomorewhatifs.mp3";
 import BeneathTheMask from "../audio/beneaththemask.mp3";
 import TakeOver from "../audio/takeover.mp3";
+import CinematicTale from "../audio/cinematictale.mp3";
+import MazeOfLife from "../audio/mazeoflife.mp3";
+import PullTheTrigger from "../audio/pullthetrigger.mp3";
+import RoadLessTaken from "../audio/roadlesstaken.mp3";
 
 
 const PlaySound = (
@@ -18,11 +20,14 @@ const PlaySound = (
     handleSongFinishedPlaying, currentSong, setSong, isPlaying, setIsPlaying, isLooped, setLoop}
 ) => {
 
+    //array to store a simple playlist full of the songs
     const playlist = [  Price, LayerCake, LifeGoesOn, 
                         WhimsOfFate,WakeUpGetUp, NoMoreWhatIfs,
-                        BeneathTheMask, TakeOver];
+                        BeneathTheMask, TakeOver, CinematicTale,
+                        MazeOfLife, PullTheTrigger, RoadLessTaken
+                    ];
 
-    
+    //function to change icons when the play button is clicked
     const handleClickIcon = () => {
         let iClass = [" fas fa-solid fa-play", "play-btn"];
         if(!isPlaying){
