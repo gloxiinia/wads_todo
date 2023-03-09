@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/wads_todo/static/css/main.d20c565a.css",
+    "main.js": "/wads_todo/static/js/main.19f0b4ca.js",
+    "static/media/wakeupgetup.mp3": "/wads_todo/static/media/wakeupgetup.9f4b7ebc9d4015891792.mp3",
+    "static/media/beneaththemask.mp3": "/wads_todo/static/media/beneaththemask.abeb7143e75f861a4213.mp3",
+    "static/media/nomorewhatifs.mp3": "/wads_todo/static/media/nomorewhatifs.fd74edc8788f10c7cb8b.mp3",
+    "static/media/whimsoffate.mp3": "/wads_todo/static/media/whimsoffate.b59fcd7f71238f603cf2.mp3",
+    "static/media/takeover.mp3": "/wads_todo/static/media/takeover.84b425d89ec3be2983f0.mp3",
+    "static/media/lifegoeson.mp3": "/wads_todo/static/media/lifegoeson.2d8c495277fc4a04efcb.mp3",
+    "static/media/layercake.mp3": "/wads_todo/static/media/layercake.6f001f039ab2ecf7e883.mp3",
+    "static/media/price.mp3": "/wads_todo/static/media/price.777b0d6976bb7d418e75.mp3",
+    "static/media/img104.png": "/wads_todo/static/media/img104.99721233575cf8507d39.png",
+    "static/media/joker-sit.png": "/wads_todo/static/media/joker-sit.5b84a4b08983aa5c56bd.png",
+    "static/media/joker-phone.png": "/wads_todo/static/media/joker-phone.2ce50e315cc8d345923b.png",
+    "index.html": "/wads_todo/index.html",
+    "main.d20c565a.css.map": "/wads_todo/static/css/main.d20c565a.css.map",
+    "main.19f0b4ca.js.map": "/wads_todo/static/js/main.19f0b4ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d20c565a.css",
+    "static/js/main.19f0b4ca.js"
+  ]
+}
