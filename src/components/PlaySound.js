@@ -18,16 +18,20 @@ const PlaySound = (
     handleSongFinishedPlaying, currentSong, setSong, isPlaying, setIsPlaying, isLooped, setLoop}
 ) => {
 
-    const playHandler = (e) =>{
-        e.preventDefault();
-        setIsPlaying();
-    };
-
     const playlist = [  Price, LayerCake, LifeGoesOn, 
                         WhimsOfFate,WakeUpGetUp, NoMoreWhatIfs,
                         BeneathTheMask, TakeOver];
 
     
+    const handleClickIcon = () => {
+        let iClass = [" fas fa-solid fa-play", "play-btn"];
+        if(!isPlaying){
+            return iClass;
+        }else{
+            iClass = [" fas fa-solid fa-stop", "stop-btn"];
+            return iClass;
+        }
+    }
     return (
         <div className="sound-player">
             <h2 className="heading-sound">Listen to some tunes while you task away...</h2>
@@ -36,8 +40,9 @@ const PlaySound = (
                 <i class=" fas fa-undo"></i>
             </button>
 
-            <button className= "play-btn" onClick={() => setIsPlaying(!isPlaying)} > {!isPlaying ? "Play": "Stop"}
-                <i className=" fas fa-solid fa-play"></i>
+            <button className= {handleClickIcon(!isPlaying)[1]} onClick={() => setIsPlaying(!isPlaying)} > 
+                {!isPlaying ? "Play": "Stop"}
+                <i className= {handleClickIcon(!isPlaying)[0]}></i>
             </button>
             
             <Sound 
