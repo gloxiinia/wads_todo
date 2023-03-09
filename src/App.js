@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import './App.css';
 
-import joker from './images/joker-phone.png';
+import JokerPhone from './images/joker-phone.png';
+import JokerSit from './images/joker-sit.png';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import PlaySound from './components/PlaySound';
@@ -22,6 +23,8 @@ function App() {
 
   //UseEffect, after each browser refresh run once
   //Getting and checking for the localstorage in the web
+
+  
   useEffect(() =>{
     const getLocalTodos = () => {
       if(localStorage.getItem("todos") === null){
@@ -88,8 +91,12 @@ function App() {
         todos={todos}
         filteredTodos = {filteredTodos}
       ></TodoList>
-      <div className="joker-img">
-      </div>
+      <picture>
+        <source className="joker-img" srcset={JokerSit} media="(max-width: 35em)"/>
+        < source className="joker-img" srcset={JokerPhone}/>
+        < img className="joker-img" src={JokerPhone}/>
+      </picture>
+
       <footer>
         <Name/>
       </footer>

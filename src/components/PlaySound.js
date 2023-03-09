@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 //importing songs
 import Sound from "react-sound";
@@ -18,16 +18,20 @@ const PlaySound = (
     handleSongFinishedPlaying, currentSong, setSong, isPlaying, setIsPlaying, isLooped, setLoop}
 ) => {
 
+    const playHandler = (e) =>{
+        e.preventDefault();
+        setIsPlaying();
+    };
 
     const playlist = [  Price, LayerCake, LifeGoesOn, 
                         WhimsOfFate,WakeUpGetUp, NoMoreWhatIfs,
                         BeneathTheMask, TakeOver];
 
-
+    
     return (
         <div className="sound-player">
-            <h1 className="heading-sound">Listen to some tunes while you task away...</h1>
-
+            <h2 className="heading-sound">Listen to some tunes while you task away...</h2>
+            <hr></hr>
             <button className= "loop-btn" onClick={() => setLoop(!isLooped)} > {!isLooped ? "Loop": "Unloop"}
                 <i class=" fas fa-undo"></i>
             </button>
@@ -43,7 +47,6 @@ const PlaySound = (
                 }
                 loop={isLooped}
                 volume = {20}
-                playFromPosition={300}
                 onloading={handleSongLoading}
                 onPlaying= {handleSongPlaying}
                 onFinishedPlaying = {handleSongFinishedPlaying}
