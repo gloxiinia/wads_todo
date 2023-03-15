@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { db } from './firebase';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {collection, query, orderBy, onSnapshot, QuerySnapshot} from "firebase/firestore";
-// import './App.css';
+import './styles/App.css';
 
 import JokerPhone from './images/joker-phone.png';
 import JokerSit from './images/joker-sit.png';
@@ -13,6 +13,9 @@ import PlaySound from './components/PlaySound';
 import Price from "./audio/price.mp3";
 import Name from './components/Name';
 import Login from "./components/Login";
+import Register from "./components/Register";
+import Reset from "./components/Reset";
+import Dashboard from './components/Dashboard';
 
 function App() {
 
@@ -37,19 +40,6 @@ function App() {
       })))
     })
   }, []);
-  
-  // useEffect(() =>{
-  //   const getLocalTodos = () => {
-  //     if(localStorage.getItem("todos") === null){
-  //       localStorage.setItem("todos", JSON.stringify([]));
-  //     } else {
-  //       let localTodos = JSON.parse(localStorage.getItem("todos"));
-  //       setTodos(localTodos);
-  //     }
-  //   };
-
-  //   getLocalTodos();
-  // }, []);
 
   //Handling the filter and saving the localstorage in string form
   useEffect(() => {
@@ -69,12 +59,7 @@ function App() {
       }
     };
 
-    // const saveLocalTodos = () => {
-    //   localStorage.setItem("todos", JSON.stringify(todos));
-    // };
-
     filterHandler();
-    // saveLocalTodos();
 
   }, [todos,status]);
 
@@ -84,6 +69,9 @@ function App() {
       <div className="todo-app">
         <Routes>
           <Route path="/" element= {<Login/>}/>
+          <Route path="/register" element = {<Register/>}/>
+          <Route path="/reset" element = {<Reset/>}/>
+          <Route path= "dashboard" element={<Dashboard/>}/>
         </Routes>
       <header>
         <h1>To-Do App</h1>
@@ -109,7 +97,7 @@ function App() {
       <picture>
         <source className="joker-img" srcset={JokerSit} media="(max-width: 35em)"/>
         < source className="joker-img" srcset={JokerPhone}/>
-        < img className="joker-img" src={JokerPhone}/>
+        < img className="joker-img" alt ="Joker Persona 5" src={JokerPhone}/>
       </picture>
 
       <footer>

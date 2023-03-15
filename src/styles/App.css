@@ -28,7 +28,7 @@ input[type="text"]
 
 
 body {
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.05), rgba(105, 6, 8, 0.70)), url("./images/img104.png");
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.05), rgba(105, 6, 8, 0.70)), url("../images/img104.png");
   background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
