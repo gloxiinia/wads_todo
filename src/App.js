@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import './App.css';
+import { db } from './firebase';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {collection, query, orderBy, onSnapshot, QuerySnapshot} from "firebase/firestore";
+// import './App.css';
 
 import JokerPhone from './images/joker-phone.png';
 import JokerSit from './images/joker-sit.png';
@@ -9,10 +12,12 @@ import TodoList from './components/TodoList';
 import PlaySound from './components/PlaySound';
 import Price from "./audio/price.mp3";
 import Name from './components/Name';
+import Login from "./components/Login";
 
 function App() {
 
   //UseEffect and UseStates
+  const [openAddModal, setOpenAddModal] = useState(false)
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
@@ -22,21 +27,29 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   //UseEffect, after each browser refresh run once
-  //Getting and checking for the localstorage in the web
-
-  
+  //Getting and checking for the data in the firebase firestore
   useEffect(() =>{
-    const getLocalTodos = () => {
-      if(localStorage.getItem("todos") === null){
-        localStorage.setItem("todos", JSON.stringify([]));
-      } else {
-        let localTodos = JSON.parse(localStorage.getItem("todos"));
-        setTodos(localTodos);
-      }
-    };
-
-    getLocalTodos();
+    const q = query(collection(db, "todos"), orderBy("created", "desc"));
+    onSnapshot(q, (querySnapshot)=>{
+      setTodos(querySnapshot.docs.map(todo => ({
+        id: todo.id,
+        data: todo.data()
+      })))
+    })
   }, []);
+  
+  // useEffect(() =>{
+  //   const getLocalTodos = () => {
+  //     if(localStorage.getItem("todos") === null){
+  //       localStorage.setItem("todos", JSON.stringify([]));
+  //     } else {
+  //       let localTodos = JSON.parse(localStorage.getItem("todos"));
+  //       setTodos(localTodos);
+  //     }
+  //   };
+
+  //   getLocalTodos();
+  // }, []);
 
   //Handling the filter and saving the localstorage in string form
   useEffect(() => {
@@ -56,18 +69,22 @@ function App() {
       }
     };
 
-    const saveLocalTodos = () => {
-      localStorage.setItem("todos", JSON.stringify(todos));
-    };
+    // const saveLocalTodos = () => {
+    //   localStorage.setItem("todos", JSON.stringify(todos));
+    // };
 
     filterHandler();
-    saveLocalTodos();
+    // saveLocalTodos();
 
   }, [todos,status]);
 
   //main app content
   return (
-    <div className="todo-app">
+    <Router>
+      <div className="todo-app">
+        <Routes>
+          <Route path="/" element= {<Login/>}/>
+        </Routes>
       <header>
         <h1>To-Do App</h1>
       </header>
@@ -80,8 +97,6 @@ function App() {
         setSong = {setSong}
       />
       <TodoForm 
-        todos = {todos} 
-        setTodos = {setTodos} 
         inputText = {inputText}
         setInputText = {setInputText}
         setStatus = {setStatus}
@@ -102,6 +117,8 @@ function App() {
       </footer>
 
     </div>
+  </Router>
+    
   );
 }
 
