@@ -5,6 +5,7 @@ import Register from "./components/Register";
 import Reset from "./components/Reset";
 import Dashboard from './components/Dashboard';
 import TodoFull from './components/TodoFull';
+import NotFound from "./components/NotFound";
 
 function App() {
 
@@ -14,12 +15,13 @@ function App() {
     <Router>
       <div className="todo-app">
         <Routes>
-          <Route path="/" element= {<Login/>}/>
+          <Route path="/" element= {<Navigate to="/login" />}/>
+          <Route path="/login" element= {<Login/>}/>
           <Route path="/home" element={<TodoFull/>}/>
           <Route path="/register" element = {<Register/>}/>
-          <Route path="/reset" element = {<Reset/>}/>
+          <Route path="/resetPassword" element = {<Reset/>}/>
           <Route path= "/dashboard" element={<Dashboard/>}/>
-          <Route path='*' element={<Navigate to='/home' />} />
+          <Route path='*' element={<NotFound/>} />
         </Routes>
 
 

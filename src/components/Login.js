@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate} from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle} from "../firebase";
 import {useAuthState} from "react-firebase-hooks/auth";
@@ -54,7 +53,7 @@ function Login() {
             <i className="fab fa-google" />
           </button>
           <div className='forgot-passwd'>
-            <Link to="/reset">Forgot Password</Link>
+            <Link to="/resetPassword">Forgot Password</Link>
           </div>
           <div className="register-link">
             Don't have an account? <Link to="/register">Register</Link> now.

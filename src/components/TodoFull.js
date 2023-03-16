@@ -10,6 +10,7 @@ import TodoList from './TodoList';
 import PlaySound from './PlaySound';
 import Price from "../audio/price.mp3";
 import Name from './Name';
+import Navbar from './Navbar';
 
 function TodoFull() {
 
@@ -55,8 +56,9 @@ function TodoFull() {
   
     }, [todos,status]);
 
-  return (
+  return ( 
     <div>
+        <Navbar/>
         <header>
             <h1>To-Do App</h1>
         </header>

@@ -4,10 +4,15 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
 import { auth, db, logout } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
+
+import JokerBack from "../images/joker-back.png";
+
+
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
+
   const fetchUserName = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -23,18 +28,28 @@ function Dashboard() {
     if (loading) {
         return;
     } if (!user) {
-        return navigate("/home");
+        return navigate("/");
     }
     fetchUserName();
   }, [user, loading]);
+
   return (
     <div className="dashboard">
+        <picture>
+          < img className="joker-back" alt ="Joker Back" src={JokerBack}/>
+        </picture>
        <div className="dashboard__container">
-        Logged in as
-         <div>{name}</div>
-         <div>{user?.email}</div>
+          <div className="logged-as">Logged in as:</div>
+         <div className="user-name">{name}</div>
+         <div className="user-email">{user?.email}</div>
+         <picture>
+            < img className="user-img" alt ="User Profile" src={user?.photoURL}/>
+          </picture>
          <button className="dashboard__btn" onClick={logout}>
           Logout
+         </button>
+         <button className="dashboard__btn dashboard__back" onClick={()=> navigate("/")}>
+          Go Back
          </button>
        </div>
      </div>

@@ -3,11 +3,13 @@
 }
 
 .joker-gun {
-  max-width:45vw;
+  max-width:40vw;
   max-height: auto;
   left:0;
+  padding: 5em;
  
 }
+
 .login {
     height: 100vh;
     width: 100vw;
