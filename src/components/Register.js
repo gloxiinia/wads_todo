@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth, registerWithEmailAndPassword, signInWithGoogle} from "../firebase";
 import "../styles/Register.css";
 
+import JokerName from "../images/joker-name.png";
+
 function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState("");
@@ -26,6 +28,9 @@ function Register() {
 
   return (
     <div className="register">
+        <picture>
+          < img className="joker-palm" alt ="Joker Palm" src={JokerName}/>
+        </picture>
       <div className="register__container">
         <input
           type="text"
@@ -56,8 +61,9 @@ function Register() {
           onClick={signInWithGoogle}
         >
           Register with Google
+          <i className="fab fa-google" />
         </button>
-        <div>
+        <div className="login-link">
           Already have an account? <Link to="/">Login</Link> now.
         </div>
       </div>

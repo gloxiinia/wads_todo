@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate} from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle} from "../firebase";
 import {useAuthState} from "react-firebase-hooks/auth";
 import "../styles/Login.css";
+
+import JokerGun from "../images/joker-gun.png";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -15,12 +18,15 @@ function Login() {
         // maybe trigger a loading screen
         return;
       } if (user) {
-        navigate("/dashboard");
+        navigate("/home");
       }
     }, [user, loading]);
 
     return (
-        <div className="login">
+      <div className="login">
+          <picture>
+            < img className="joker-gun" alt ="Joker Gun" src={JokerGun}/>
+          </picture>
         <div className="login__container">
           <input
             type="text"
@@ -39,16 +45,18 @@ function Login() {
           <button
             className="login__btn"
             onClick={() => logInWithEmailAndPassword(email, password)}
+          
           >
             Login
           </button>
           <button className="login__btn login__google" onClick={signInWithGoogle}>
             Login with Google
+            <i className="fab fa-google" />
           </button>
-          <div>
+          <div className='forgot-passwd'>
             <Link to="/reset">Forgot Password</Link>
           </div>
-          <div>
+          <div className="register-link">
             Don't have an account? <Link to="/register">Register</Link> now.
           </div>
         </div>

@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ /* Placeholder font */
+ .todo-input::-webkit-input-placeholder {
+  font-family: sans-serif;
+}
+
+.todo-input:-ms-input-placeholder {
+  font-family: "Arsenal",sans-serif;
+}
+
+.todo-input:-moz-placeholder {
+  font-family: "Arsenal",sans-serif;
+}
+
+.todo-input::-moz-placeholder {
+  font-family: "Arsenal",sans-serif;
+}
+
+input[type="text"]
+{
+  font-family: "Arsenal", sans-serif;
+}
+
+
+body {
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.05), rgba(105, 6, 8, 0.70)), url("../images/img104.png");
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+  font-family: "Arsenal", sans-serif;
+  min-height: 30em;
+  margin-bottom: 5em;
+
+}
+
+h1, h2, h3 {
+  padding: 0.25em;
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-width:0.10em;
+  text-align: center;
+}
+
+
+.sound-player{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+  column-gap:3em;
+  row-gap: 1em;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  padding-left: 19vw;
+  padding-right: 19vw;
+  
+}
+
+.sound-player hr{
+  width:100%;
+  flex-basis: 100%; 
+  height: 0; 
+  margin: 0; 
+  border: 0; 
+}
+
+.play-btn,
+.loop-btn, 
+.shuffle-btn,
+.stop-btn {
+  padding: 0.3em 0.5em;
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-width:0.2em;
+  font-size:1.5em;
+  font-family: "Arsenal", sans-serif;
+  font-weight: bold;
+  
+}
+
+.play-btn:hover,
+.loop-btn:hover,
+.shuffle-btn:hover,
+.stop-btn:hover {
+  border-color:black;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.fa-undo, .fa-play, .fa-random, .fa-stop{
+  padding-left: 0.5em;
+}
+
+footer{
+  position: fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  text-align:center;
+}
+
+header {
+  padding-top:2em;
+  font-size: 1.5em;
+  font-family: "Franklin Gothic", sans-serif ;
+  color: white;
+  transition: all 1s ease;
+}
+
+
+header,
+form {
+  min-height: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.3em;
+  font-size: 1.5em;
+  border: none;
+  background: white;
+  transition: all 1s ease;
+  font-weight: bold;
+}
+form input{
+  min-width:20%;
+}
+form button {
+  padding: 0.33em;
+  color: black;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+form button:hover {
+  background: black;
+  color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5em;
+  background: white;
+  font-size: 1.2em;
+  font-weight:bold;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 2s ease;
+}
+.filter-todo {
+  padding: 1em;
+}
+.todo li {
+  flex: 1;
+}
+
+.delete-btn,
+.done-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1em;
+}
+.done-btn {
+  background: red;
+}
+.todo-item {
+  padding: 0em 0.5em;
+}
+
+.fa-delete,
+.fa-check {
+  pointer-events: none;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1em;
+  position: relative;
+  overflow: hidden;
+}
+select, option {
+  color: black;
+  font-family: "Arsenal", sans-serif;
+  font-size:0.9em;
+  font-weight:bold;
+  cursor: pointer;
+  width: 12em;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background: black;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+/* Joker image */
+.joker-img {
+  position: fixed;
+  max-width:auto;
+  max-height:50vh;
+  bottom: 4vh;
+  z-index: -1;
+  transition: all 1s ease;
+}
+
+@media (max-width: 60em) {
+
+  header{
+    font-size: 1.2em;
+  }
+  body{
+    font-size: 0.8em
+  }
+  .sound-player{
+    flex-wrap: wrap;
+    row-gap: 1em;
+    column-gap:1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    transition: all 1s ease;
+  }
+  .heading-sound{
+    font-size: 1.8em;
+    padding-top: 0.5em;
+    padding-bottom:0.5em;
+    transition: all 1s ease;
+  }
+  .play-btn,
+  .loop-btn, 
+  .shuffle-btn,
+  .stop-btn{
+    padding: 0.3em 0.5em;
+    border-width:0.10em;
+    font-size:2em;
+    transition: all 1s ease;
+    
+  }
+
+  form input,
+form button {
+  padding: 0.5em;
+  font-size: 1.5em;
+  transition: all 1s ease;
+}
+
+form button{
+  padding:0.53em;
+}
+.todo {
+  margin: 0.5em;
+  font-size: 1em;
+  transition: all 2s ease;
+}
+}
+
+@media (max-width: 35em) {
+  header{
+    font-size: 2em;
+  }
+  body{
+    font-size: 0.5em;
+    
+  }
+
+  .play-btn,
+  .loop-btn, 
+  .shuffle-btn,
+  .stop-btn{
+    padding: 0.3em 0.5em;
+    border-width:0.2em;
+    font-size:1.91em;
+    transition: all 1s ease;
+    
+  }
+
+    form input,
+    form button {
+    padding: 0.5em;
+    font-size: 2em;
+    transition: all 1s ease;
+  }
+  form input{
+    width: 8em;
+  }
+
+  form button{
+    padding:0.525em;
+  }
+  .todo {
+    margin: 0.5em;
+    font-size: 1.8em;
+    transition: all 1s ease;
+  }
+
+  .todo-list {
+    min-width: 50%;
+  }
+  
+  select {
+    font-size:1.4em;
+    width: 5em;
+  }
+  .select::after {
+    content: "\25BC";
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 2em;
+    background: black;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  .joker-img {
+    padding: 0;
+    position: fixed;
+    width:100vw;
+    height:auto;
+    bottom:2vh;
+    z-index: -1;
+    transition: all 1s ease;
+  }
+  
+
+  
+}

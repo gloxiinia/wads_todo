@@ -23,7 +23,7 @@ function Dashboard() {
     if (loading) {
         return;
     } if (!user) {
-        return navigate("/");
+        return navigate("/home");
     }
     fetchUserName();
   }, [user, loading]);
