@@ -2,8 +2,6 @@
 
 Some packages such as react-sound are deprecated, to run the app locally, use ```npm install --force```
 
-Or if you want, you can check the demo with only the To-Do app here: https://gloxiinia.github.io/wads_todo/
-
 # Preview
 - Login page
 
