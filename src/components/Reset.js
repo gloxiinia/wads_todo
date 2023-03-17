@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import {auth, sendPasswordReset} from "../firebase";
 import "../styles/Reset.css";
+import JokerThumbsUp from "../images/joker-thumbsup.png";
 
 function Reset() {
     const [email, setEmail] = useState("");
@@ -19,6 +20,9 @@ function Reset() {
 
   return (
     <div className="reset">
+      <picture>
+        < img className="joker-thumbsup" alt ="Joker Thumbs Up" src={JokerThumbsUp}/>
+      </picture>
       <div className="reset__container">
         <input
           type="text"

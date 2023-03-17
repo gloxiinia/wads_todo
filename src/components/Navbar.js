@@ -3,6 +3,7 @@ import { Link, Navigate } from 'react-router-dom';
 
 
 import "../styles/Navbar.css";
+import LogoutAlert from './LogoutAlert';
 
 function Navbar() {
 
@@ -23,10 +24,8 @@ function Navbar() {
                     <Link to="/resources">Resources</Link>
                 </li>
                 <li>
-                    <Link to="/dashboard"> 
-                        Logout 
-                        <i className="fas fa-sign-out-alt"></i>
-                    </Link>
+                    <LogoutAlert> 
+                    </LogoutAlert>
                 </li>
             </ul>
 

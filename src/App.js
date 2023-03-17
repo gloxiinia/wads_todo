@@ -6,6 +6,7 @@ import Reset from "./components/Reset";
 import Dashboard from './components/Dashboard';
 import TodoFull from './components/TodoFull';
 import NotFound from "./components/NotFound";
+import LogoutAlert from "./components/LogoutAlert";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <div className="todo-app">
         <Routes>
           <Route path="/" element= {<Navigate to="/login" />}/>
+          <Route path="/logout" element={<LogoutAlert/>}/>
           <Route path="/login" element= {<Login/>}/>
           <Route path="/home" element={<TodoFull/>}/>
           <Route path="/register" element = {<Register/>}/>
