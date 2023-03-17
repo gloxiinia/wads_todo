@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wads_todo/static/css/main.d20c565a.css",
-    "main.js": "/wads_todo/static/js/main.9695756a.js",
+    "main.css": "/wads_todo/static/css/main.d1a974c9.css",
+    "main.js": "/wads_todo/static/js/main.cd8d4739.js",
     "static/media/mazeoflife.mp3": "/wads_todo/static/media/mazeoflife.e8c0255a7ced1fd96ed3.mp3",
     "static/media/wakeupgetup.mp3": "/wads_todo/static/media/wakeupgetup.9f4b7ebc9d4015891792.mp3",
     "static/media/roadlesstaken.mp3": "/wads_todo/static/media/roadlesstaken.e2aca975d93664c69b23.mp3",
@@ -15,14 +15,18 @@
     "static/media/layercake.mp3": "/wads_todo/static/media/layercake.6f001f039ab2ecf7e883.mp3",
     "static/media/price.mp3": "/wads_todo/static/media/price.777b0d6976bb7d418e75.mp3",
     "static/media/img104.png": "/wads_todo/static/media/img104.99721233575cf8507d39.png",
+    "static/media/joker-name.png": "/wads_todo/static/media/joker-name.a504997041703a335fdc.png",
     "static/media/joker-sit.png": "/wads_todo/static/media/joker-sit.5b84a4b08983aa5c56bd.png",
+    "static/media/joker-thumbsup.png": "/wads_todo/static/media/joker-thumbsup.8ced48de539cad61cbcc.png",
+    "static/media/joker-back.png": "/wads_todo/static/media/joker-back.b385df00c09556aa4920.png",
+    "static/media/joker-gun.png": "/wads_todo/static/media/joker-gun.466899c8c2d67b39f6d6.png",
     "static/media/joker-phone.png": "/wads_todo/static/media/joker-phone.2ce50e315cc8d345923b.png",
     "index.html": "/wads_todo/index.html",
-    "main.d20c565a.css.map": "/wads_todo/static/css/main.d20c565a.css.map",
-    "main.9695756a.js.map": "/wads_todo/static/js/main.9695756a.js.map"
+    "main.d1a974c9.css.map": "/wads_todo/static/css/main.d1a974c9.css.map",
+    "main.cd8d4739.js.map": "/wads_todo/static/js/main.cd8d4739.js.map"
   },
   "entrypoints": [
-    "static/css/main.d20c565a.css",
-    "static/js/main.9695756a.js"
+    "static/css/main.d1a974c9.css",
+    "static/js/main.cd8d4739.js"
   ]
 }
